@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microservice.Infrastructure.Services;
+using Microservice.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,9 +39,9 @@ namespace Microservice.Controller
             return value;
         }
         [HttpPost]
-        public ActionResult<object> Postvalue(object value=null)
+        public ActionResult<EmployeeModel> Postvalue(EmployeeModel employee)
         {
-            var result=_iuserService.FetchUserInfo(value);
+            var result=_iuserService.FetchUserInfo(employee);
             return result;
         }
         #endregion

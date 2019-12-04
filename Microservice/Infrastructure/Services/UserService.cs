@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microservice.Infrastructure.Repository;
 using Microservice.Infrastructure.Services;
+using Microservice.Model;
 
 namespace Microservice.Infrastructure.Services
 {
@@ -14,9 +15,9 @@ namespace Microservice.Infrastructure.Services
         {
             _iuserRepository = iuserRepository;
         }
-        public object FetchUserInfo(object value)
+        public EmployeeModel FetchUserInfo(EmployeeModel employee)
         {
-            return _iuserRepository.FetchUserInfo(value);
+            return _iuserRepository.FetchUserInfo(employee);
         }
     }
 }
